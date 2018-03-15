@@ -1,0 +1,51 @@
+
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=2">
+<title>請輸入想要變化的字</title>
+<meta name="description" content="請輸入想要變化的字">
+</head> 
+<textarea rows=3 cols=15 id=txt1>請輸入想要變化的字</textarea><br>
+<button onclick=change("\u0304")>一&#x0304</button>
+<button onclick=change("\u0305")>一&#x0305</button>
+<button onclick=change("\u030c")>一&#x030c</button>
+<button onclick=change("\u0483")>一&#x0483</button><br>
+<button onclick=change("\u0484")>一&#x0484</button>
+<button onclick=change("\u0487")>一&#x0487</button>
+<button onclick=change("\u0488")>一&#x0488</button>
+<button onclick=change("\u0489")>一&#x0489</button><br>
+<button onclick=change("\u0e31")>一&#x0e31</button>
+<button onclick=change("\u0e34")>一&#x0e34</button>
+<button onclick=change("\u0e35")>一&#x0e35</button>
+<button onclick=change("\u0e36")>一&#x0e36</button><br>
+<button onclick=change("\u0e37")>一&#x0e37</button>
+<button onclick=change("\u0e38")>一&#x0e38</button>
+<button onclick=change("\u0e39")>一&#x0e39</button>
+<button onclick=change("\u0e47")>一&#x0e47</button><br>
+<button onclick=change("\u0e48")>一&#x0e48</button>
+<button onclick=change("\u0e49")>一&#x0e49</button>
+<button onclick=change("\u0e4a")>一&#x0e4a</button>
+<button onclick=change("\u0e4b")>一&#x0e4b</button><br>
+<button onclick=change("\u0e4c")>一&#x0e4c</button>
+<button onclick=change("\u0e4d")>一&#x0e4d</button>
+<button onclick=change("\u0e4e")>一&#x0e4e</button>
+
+
+
+<br>
+<textarea rows=3 cols=15 id=txt2>按下上方的按鈕</textarea><br>
+<div id=div1>結果顯示&#x1F601</div>
+
+<script>
+function change(userChr){
+   str1=txt1.value;
+   str2="";
+   str1h=str1.length;
+   combining=userChr;
+   for(i=0; i<str1.length; i++)  {
+      str2=str2+str1[i]+combining;
+   }
+   txt2.value=str2;
+   div1.innerHTML=str2;
+}
+
+</script>
