@@ -1,0 +1,44 @@
+﻿<meta charset="UTF-8">
+<table border=1 id="table2f" width=100%>
+ <tr><td>歐迪增</td><td>許峰彰</td><td>楊辰孝</td><td>賈銘樑</td><td>王志鈞</td><td>黃文福</td><td>張簡奉忠</td><td>蔡俊雄</td><td>簫仲均</td></tr>
+ <tr><td>李政聖</td><td>李旻隆</td><td>鄭全勝</td><td>張勢煌</td><td>黃進榮</td><td>陳建有</td><td>蘇國政</td><td>蔡金全</td><td>黃富信</td></tr>
+</table>
+請點上方的<span id=ques style="color:blue;">abcd</span><br>
+目前得分<div id="usrScore">0</div>
+
+<button onclick=alert(xing4ming2);>how</button>
+
+<script>
+  tr=0; td=0; n=0; xing4ming2=[]; max=0; rndStr=""; score=0;
+  tr=document.getElementById("table2f").rows.length;
+  for(i=0; i<tr; i++) {
+    td=document.getElementById("table2f").rows[i].cells.length;
+    for(j=0; j<td; j++){
+       xing4ming2[n]=document.getElementById("table2f").rows[i].cells[j].innerText;
+       document.getElementById("table2f").rows[i].cells[j].innerHTML=addBr(xing4ming2[n]);
+       n++;
+       document.getElementById("table2f").rows[i].cells[j].addEventListener("click", function(){ showText(this)}, false);
+    }
+  }
+function showText(h){
+  s=addBr(rndStr);
+    if(h.innerHTML==s) {
+      print_ques();
+      document.getElementById("usrScore").innerHTML=++score;
+    }
+}
+function addBr(s){
+   a=s.split("");
+   return a.join("<br>");
+}
+function print_ques(){
+    max=xing4ming2.length;
+    rnd=getRandom(0,max-1);
+    rndStr=xing4ming2[rnd]
+    document.getElementById("ques").innerText=rndStr;
+}
+function getRandom(min,max){
+    return Math.floor(Math.random()*(max-min+1))+min;
+}
+print_ques();
+</script>
